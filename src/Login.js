@@ -9,26 +9,13 @@ export default class RadioButton extends React.Component {
       console.log(changeEvent.target.value)
       this.setState({selectedOption: changeEvent.target.value});
   }
-  // handleSubmit(event) {
-  //   alert('A name was submitted: ' + this.input.value);
-  //   event.preventDefault();
-  // }
   handleFormSubmit(formSubmitEvent) {
   formSubmitEvent.preventDefault();
-  // alert('Redirecting to: ' + this.state.selectedOption);
   this.props.history.push('/' + this.state.selectedOption.toLowerCase());
   }
     render() {
         return (
             <div>
-              {/*<form onSubmit={this.handleSubmit.bind(this)}>
-                <label>
-                  Name:
-                  <input type="text" ref={(input) => this.input = input} />
-                </label>
-                <input type="submit" value="Submit" />
-              </form>*/}
-
               <form onSubmit={this.handleFormSubmit.bind(this)}>
               <div className="radio">
                 <label>

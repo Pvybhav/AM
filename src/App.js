@@ -20,7 +20,6 @@ import Student_HomePage from "./Student_Home.js"
 import Lecturer_HomePage from "./Lecturer_Home.js"
 import Admin_HomePage from "./Admin_Home.js"
 import Error from "./Error.js"
-import { NavLink } from "react-router-dom";
 
 import {Nav, Navbar, NavDropdown, NavItem, MenuItem} from "react-bootstrap"
 
