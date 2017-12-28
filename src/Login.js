@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 export default class RadioButton extends React.Component {
   constructor(props) {
@@ -15,7 +15,7 @@ export default class RadioButton extends React.Component {
   // }
   handleFormSubmit(formSubmitEvent) {
   formSubmitEvent.preventDefault();
-  alert('Redirecting to: ' + this.state.selectedOption);
+  // alert('Redirecting to: ' + this.state.selectedOption);
   this.props.history.push('/' + this.state.selectedOption.toLowerCase());
   }
     render() {
@@ -32,7 +32,7 @@ export default class RadioButton extends React.Component {
               <form onSubmit={this.handleFormSubmit.bind(this)}>
               <div className="radio">
                 <label>
-                  <input type="radio" value="Student" checked={true} checked={this.state.selectedOption === 'Student'}
+                  <input type="radio" value="Student" checked={this.state.selectedOption === 'Student'}
                       onChange={this.handleOptionChange.bind(this)} />
                   Student
                 </label>

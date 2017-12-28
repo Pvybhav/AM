@@ -1,19 +1,25 @@
 import React, { Component } from "react";
 import ReactDOM from 'react-dom';
- 
+
 class Student extends Component {
   constructor(props){
     super(props);
-    this.state = {username : "vybhav", password : "password"}
+    this.state = {username : "vybhav", password : "vybhav"}
   }
   handleUserNameChange(username){
     this.setState({username : username.target.value})
   }
   handlePasswordChange(password){
-    alert(password.target.value)
+    console.log(password.target.value)
+    this.setState({password : password.target.value})
   }
   handleStudentFormSubmit(event){
-    alert(this.state.username)
+    if(this.state.username === "vybhav" && this.state.password === "vybhav"){
+      this.props.history.push('/student_homepage')
+    }
+    else{
+      this.props.history.push('/error')
+    }
   }
   clearFormValues(event){
     this.setState({username : "", password : ""})
