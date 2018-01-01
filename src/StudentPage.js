@@ -1,18 +1,21 @@
 import React, { Component } from "react";
 import ReactDOM from 'react-dom';
 
-class Student extends Component {
+export default class Student extends Component {
   constructor(props){
     super(props);
     this.state = {username : "vybhav", password : "vybhav"}
   }
+
   handleUserNameChange(username){
     this.setState({username : username.target.value})
   }
+
   handlePasswordChange(password){
     console.log(password.target.value)
     this.setState({password : password.target.value})
   }
+
   handleStudentFormSubmit(event){
     if(this.state.username === "vybhav" && this.state.password === "vybhav"){
       this.props.history.push('/student_homepage')
@@ -21,10 +24,12 @@ class Student extends Component {
       this.props.history.push('/error')
     }
   }
+
   clearFormValues(event){
     this.setState({username : "", password : ""})
     ReactDOM.findDOMNode(this.refs.userName).focus();
   }
+
   render() {
     return (
       <div>
@@ -39,5 +44,3 @@ class Student extends Component {
     );
   }
 }
-
-export default Student;

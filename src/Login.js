@@ -1,46 +1,49 @@
 import React from 'react';
+import LoginForm from './LoginForm.js'
 
-export default class RadioButton extends React.Component {
+export default class Login extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {selectedOption: 'Student'}
+    this.state = {}
   }
-  handleOptionChange(changeEvent) {
-      console.log(changeEvent.target.value)
-      this.setState({selectedOption: changeEvent.target.value});
+
+  signIn(username, password) {
+      this.setState({
+        user: {
+          username,
+          password,
+        }
+      })
   }
-  handleFormSubmit(formSubmitEvent) {
-  formSubmitEvent.preventDefault();
-  this.props.history.push('/' + this.state.selectedOption.toLowerCase());
+
+  signOut() {
+      this.setState({user: null})
   }
-    render() {
-        return (
-            <div>
-              <form onSubmit={this.handleFormSubmit.bind(this)}>
-              <div className="radio">
-                <label>
-                  <input type="radio" value="Student" checked={this.state.selectedOption === 'Student'}
-                      onChange={this.handleOptionChange.bind(this)} />
-                  Student
-                </label>
-              </div>
-              <div className="radio">
-                <label>
-                  <input type="radio" value="Lecturer" checked={this.state.selectedOption === 'Lecturer'}
-                      onChange={this.handleOptionChange.bind(this)} />
-                  Lecturer
-                </label>
-              </div>
-              <div className="radio">
-                <label>
-                  <input type="radio" value="Admin" checked={this.state.selectedOption === 'Admin'}
-                      onChange={this.handleOptionChange.bind(this)} />
-                  Admin
-                </label>
-              </div>
-              <button type="submit">Login</button>
-              </form>
-            </div>
-        );
+
+  render() {
+    const Welcome = ({user, onSignOut})=> {
+    return (
+        <div>
+          Welcome <strong>{user.username}</strong>!
+          <a href="javascript:;" onClick={onSignOut}>Sign out</a>
+        </div>
+      )
     }
+    return (
+        <div>
+        <h1>My cool App</h1>
+        {
+          (this.state.user) ?
+            <Welcome
+             user={this.state.user}
+             onSignOut={this.signOut.bind(this)}
+            />
+          :
+            <LoginForm
+             onSignIn={this.signIn.bind(this)}
+            />
+        }
+        </div>
+    );
+  }
 };

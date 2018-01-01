@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Admin_Home extends Component {
+export default class Admin_Home extends Component {
   render() {
     return (
       <div>
@@ -9,5 +9,3 @@ class Admin_Home extends Component {
     );
   }
 }
-
-export default Admin_Home;

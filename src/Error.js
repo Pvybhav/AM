@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class Error extends Component {
+export default class Error extends Component {
   render() {
     return (
       <div>
@@ -9,5 +9,3 @@ class Error extends Component {
     );
   }
 }
-
-export default Error;
