@@ -9,10 +9,11 @@ import {
 } from "react-router-dom";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-import Home from "./Home";
+import Home from "./Home.js";
 import HomePage from "./HomePage.js"
-import Contact from "./Contact";
-import Stuff from "./Stuff"
+import Signup from "./Signup.js"
+import Contact from "./Contact.js";
+import Stuff from "./Stuff.js"
 import RadioButton from "./RadioButton.js"
 import Login from './Login.js';
 import Student from "./StudentPage.js"
@@ -33,10 +34,11 @@ class App extends Component {
             {/*<RadioButton />*/}
             <div className="content">
               <Route path="/" component={Home}/>
-              <Route path="/home" component={HomePage}/>              
+              <Route path="/home" component={HomePage}/>
               <Route path="/stuff" component={Stuff}/>
               <Route path="/contact" component={Contact}/>
               <Route path="/login" component={Login}/>
+              <Route path="/signup" component={Signup}/>
               <Route path="/student" component={Student}/>
               <Route path="/lecturer" component={Lecturer}/>
               <Route path="/admin" component={Admin}/>

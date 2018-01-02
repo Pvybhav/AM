@@ -27,6 +27,7 @@ export default class Home extends Component {
                 <MenuItem eventKey={3.3}>Separated link</MenuItem>
               </NavDropdown>
               <NavItem eventKey={4}><NavLink to = "/contact">Contact</NavLink></NavItem>
+              <NavItem eventKey={5}><NavLink to = "/signup">signup</NavLink></NavItem>
             </Nav>
             <Nav pullRight>
               <NavItem eventKey={1}>Logged in As : vybhav</NavItem>

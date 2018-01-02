@@ -1,0 +1,32 @@
+{
+   "Students_list":[
+      {
+         "username":"vybhav_stu",
+         "password":"vybhav"
+      },
+      {
+         "username":"rohith_stu",
+         "password":"rohith"
+      }
+   ],
+   "Lecturers_list":[
+      {
+         "username":"vybhav_lec",
+         "password":"vybhav"
+      },
+      {
+         "username":"rohith_lec",
+         "password":"rohith"
+      }
+   ],
+   "Admins_list":[
+      {
+         "username":"vybhav_adm",
+         "password":"vybhav"
+      },
+      {
+         "username":"rohith_adm",
+         "password":"rohith"
+      }
+   ]
+}
